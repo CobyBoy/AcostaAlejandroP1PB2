@@ -12,7 +12,7 @@ public class LibroDeHistoria extends Libro implements Fotocopiable{
 	@Override
 	public String libroQueSePuedeFotocopiar() {
 		// TODO Auto-generated method stub
-		return null;
+		return this.getNombreDeLibro();
 	}
 
 }

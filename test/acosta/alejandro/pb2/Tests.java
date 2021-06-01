@@ -5,12 +5,38 @@ import static org.junit.Assert.*;
 import org.junit.Test;
 
 import acosta.alejandro.pb2.enums.TipoDeLibro;
+import acosta.alejandro.pb2.models.Alumno;
+import acosta.alejandro.pb2.models.Biblioteca;
+import acosta.alejandro.pb2.models.Libro;
+import acosta.alejandro.pb2.models.LibroDeGeografia;
+import acosta.alejandro.pb2.models.LibroDeHistoria;
+import acosta.alejandro.pb2.models.LibroDeMatematica;
+import acosta.alejandro.pb2.models.Prestamo;
 
 public class Tests {
 
 	@Test
-	public void test() {
+	public void queSePuedanAgregarLibrosAlaBiblioteca() {
+		Biblioteca biblioteca = new Biblioteca("Biblioteca Unlam");
+		biblioteca.agregarLibrosALaBiblioteca(new LibroDeMatematica(1, "Matematicas Discretas", "unAutor"));
+		biblioteca.agregarLibrosALaBiblioteca(new LibroDeGeografia(2, "Geografia mundial", "otroAutor"));
+		biblioteca.agregarLibrosALaBiblioteca(new LibroDeHistoria(3, "Historia Argentina", "tercerAutor"));
 		
+		assertEquals((Integer)3, biblioteca.getCantidadDeLibrosEnBiblioteca());
+		
+	}
+	
+	@Test
+	public void queUnAlumnoPuedaSacarUnLibroYElLibroNoEsteHabilitadoDespuesDeSacarlo() {
+		Biblioteca biblioteca = new Biblioteca("Biblioteca Unlam");
+		Libro libroDeMatematica = new LibroDeMatematica(1, "Matematicas Discretas", "unAutor");
+		biblioteca.agregarLibrosALaBiblioteca(libroDeMatematica);
+		biblioteca.agregarLibrosALaBiblioteca(new LibroDeGeografia(2, "Geografia mundial", "otroAutor"));
+		biblioteca.agregarLibrosALaBiblioteca(new LibroDeHistoria(3, "Historia Argentina", "tercerAutor"));
+		
+		Alumno alumno = new Alumno(35396973, "Coby", "Acosta");
+		alumno.sacarLibro(libroDeMatematica);
+		System.out.println(biblioteca);
 	}
 
 }

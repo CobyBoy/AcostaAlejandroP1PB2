@@ -1,14 +1,17 @@
 package acosta.alejandro.pb2.models;
 
+import java.util.LinkedList;
+import java.util.List;
+
 public class Prestamo {
 	private Integer id;
-	private Alumno alumnoAlQueSelePresto;
-	private Libro libro;
+	private List <Alumno> alumnoAlQueSelePresto;
+	private List <Libro> libroprestado;
 	
 	public Prestamo(Integer id, Alumno alumno, Libro libroprestado) {
 		this.id = id;
-		this.alumnoAlQueSelePresto = alumno;
-		this.libro = libroprestado;
+		this.alumnoAlQueSelePresto = new LinkedList<Alumno>();
+		this.libroprestado =  new LinkedList<Libro>();
 	}
 
 	public Integer getId() {
@@ -19,20 +22,5 @@ public class Prestamo {
 		this.id = id;
 	}
 
-	public Alumno getAlumnoAlQueSelePresto() {
-		return alumnoAlQueSelePresto;
-	}
-
-	public void setAlumnoAlQueSelePresto(Alumno alumnoAlQueSelePresto) {
-		this.alumnoAlQueSelePresto = alumnoAlQueSelePresto;
-	}
-
-	public Libro getLibro() {
-		return libro;
-	}
-
-	public void setLibro(Libro libro) {
-		this.libro = libro;
-	}
 
 }
