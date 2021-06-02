@@ -39,5 +39,16 @@ public class Tests {
 		biblioteca.prestarLibroAAlumno(1, alumno, libroDeMatematica);
 		assertFalse(libroDeMatematica.getSePuedePrestar());
 	}
+	
+	@Test
+	public void queAlSacarUnlibroYaNoEsteEnLaBiblioteca() {
+		Biblioteca biblioteca = new Biblioteca("Biblioteca Unlam");
+		Libro libroDeMatematica = new LibroDeMatematica(1, "Matematicas Discretas", "unAutor");
+		biblioteca.agregarLibrosALaBiblioteca(libroDeMatematica);
+		
+		Alumno alumno = new Alumno(35396973, "Coby", "Acosta");
+		
+		assertEquals((Integer)0, biblioteca.prestarLibroAAlumno(1, alumno, libroDeMatematica));
+	}
 
 }

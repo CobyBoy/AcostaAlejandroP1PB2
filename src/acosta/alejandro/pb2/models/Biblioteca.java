@@ -42,13 +42,15 @@ public class Biblioteca {
 		return "Biblioteca [libros=" + libros + ", nombreDeBiblioteca=" + nombreDeBiblioteca + "]";
 	}
 
-	public void prestarLibroAAlumno(Integer id, Alumno alumno, Libro libro) {
+	public Integer prestarLibroAAlumno(Integer id, Alumno alumno, Libro libro) {
 		Boolean libroExiste = this.libros.contains(libro);
 		if (libroExiste) {
 			libro.setSePuedePrestar(false);
 			Prestamo prestamo = new Prestamo(id);
 			prestamo.crearPrestamo(alumno, libro);
+			this.libros.remove(libro);
 		}
+		return this.libros.size();
 	}
 
 }
