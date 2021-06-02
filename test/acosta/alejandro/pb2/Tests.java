@@ -35,8 +35,9 @@ public class Tests {
 		biblioteca.agregarLibrosALaBiblioteca(new LibroDeHistoria(3, "Historia Argentina", "tercerAutor"));
 		
 		Alumno alumno = new Alumno(35396973, "Coby", "Acosta");
-		alumno.sacarLibro(libroDeMatematica);
-		System.out.println(biblioteca);
+		
+		biblioteca.prestarLibroAAlumno(1, alumno, libroDeMatematica);
+		assertFalse(libroDeMatematica.getSePuedePrestar());
 	}
 
 }

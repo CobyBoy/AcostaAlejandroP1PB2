@@ -37,5 +37,9 @@ public abstract class Libro {
 	public void setSePuedePrestar(Boolean sePuedePrestar) {
 		this.sePuedePrestar = sePuedePrestar;
 	}
+	@Override
+	public String toString() {
+		return "Libro [nombreDeLibro=" + nombreDeLibro + ", sePuedePrestar=" + sePuedePrestar + "]";
+	}
 	
 }

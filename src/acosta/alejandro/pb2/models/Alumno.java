@@ -41,10 +41,5 @@ public class Alumno {
 	public Integer getCANTIDAD_MAXIMA_DE_PRESTAMOS() {
 		return CANTIDAD_MAXIMA_DE_PRESTAMOS;
 	}
-
-	public void sacarLibro(Libro libro) {
-		libro.setSePuedePrestar(false);
-	}
-	
 	
 }

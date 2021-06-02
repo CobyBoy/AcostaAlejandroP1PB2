@@ -8,7 +8,7 @@ public class Prestamo {
 	private List <Alumno> alumnoAlQueSelePresto;
 	private List <Libro> libroprestado;
 	
-	public Prestamo(Integer id, Alumno alumno, Libro libroprestado) {
+	public Prestamo(Integer id) {
 		this.id = id;
 		this.alumnoAlQueSelePresto = new LinkedList<Alumno>();
 		this.libroprestado =  new LinkedList<Libro>();
@@ -20,6 +20,27 @@ public class Prestamo {
 
 	public void setId(Integer id) {
 		this.id = id;
+	}
+
+	public List<Alumno> getAlumnoAlQueSelePresto() {
+		return alumnoAlQueSelePresto;
+	}
+
+	public void setAlumnoAlQueSelePresto(List<Alumno> alumnoAlQueSelePresto) {
+		this.alumnoAlQueSelePresto = alumnoAlQueSelePresto;
+	}
+
+	public List<Libro> getLibroprestado() {
+		return libroprestado;
+	}
+
+	public void setLibroprestado(List<Libro> libroprestado) {
+		this.libroprestado = libroprestado;
+	}
+
+	public void crearPrestamo(Alumno alumno, Libro libro) {
+		this.alumnoAlQueSelePresto.add(alumno);
+		this.libroprestado.add(libro);
 	}
 
 
