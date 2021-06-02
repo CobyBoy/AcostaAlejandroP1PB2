@@ -63,8 +63,8 @@ public class Tests {
 		
 		biblioteca.prestarLibroAAlumno(1, alumno, libroDeMatematica);
 		
-		//alumno.devolverLibro();
-		assertFalse(libroDeMatematica.getSePuedePrestar());
+		alumno.devolverLibro(libroDeMatematica);
+		assertTrue(libroDeMatematica.getSePuedePrestar());
 	}
 	
 	@Test

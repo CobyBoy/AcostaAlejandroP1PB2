@@ -48,6 +48,7 @@ public class Biblioteca {
 			libro.setSePuedePrestar(false);
 			Prestamo prestamo = new Prestamo(id);
 			prestamo.crearPrestamo(alumno, libro);
+			alumno.restarPrestamo();
 			this.libros.remove(libro);
 		}
 		return this.libros.size();
